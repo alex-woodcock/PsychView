@@ -5,8 +5,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- <?php include 'script.php';?>  -->
-
 <link rel="stylesheet" type="text/css" href="home.css">
 
 </head>
@@ -23,10 +21,7 @@
 	var videoID3;
 	var videoID4;
 
-function loadFunction() {
-
-			
-			document.getElementById("meme2").innerHTML = i;
+function loadFunction() {		
 
 			const queryString = window.location.search;
 			console.log(queryString);
@@ -37,56 +32,48 @@ function loadFunction() {
 			var prod2 = product.substring(28,52);
 			var prod3 = product.substring(56,80);
 			var prod4 = product.substring(84, 108);
-			
-			
-			
-			
-			
+				
 			if (prod1.length >18){
 			
 			
-			alert(prod1);
+			
 			document.body.insertAdjacentHTML('beforeEnd', '<iframe id="video1" width="50%" height="315" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
 			var newID = "https://www.youtube.com/embed/live_stream?channel=";
 			var compVid = newID.concat(prod1);
 			video1.src = compVid;
-			i = 2;
+			i = 1;
 			
-			document.getElementById("meme2").innerHTML = i;
-			
-					if (i == 2) {
-					
-					
-					alert(prod2);		
+					if (i == 1 && prod2.length > 18) {					
+							
 					document.body.insertAdjacentHTML('beforeEnd', '<iframe id="video2" width="50%" height="315" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
 					var newID = "https://www.youtube.com/embed/live_stream?channel=";
 					var compVid = newID.concat(prod2);
 					video2.src = compVid;
-					i = 3;
+					i = 2;					
+						
 					
-						document.getElementById("meme2").innerHTML = i;
-					
-						if (i == 3) {
+						if (i == 2 && prod3.length > 18) {
 											
-						alert(prod3);		
+								
 						document.body.insertAdjacentHTML('beforeEnd', '<iframe id="video3" width="50%" height="315" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
 						var newID = "https://www.youtube.com/embed/live_stream?channel=";
 						var compVid = newID.concat(prod3);
 						video3.src = compVid;
-						i = 4;
+						i = 3;
 						
-						document.getElementById("meme2").innerHTML = i;
 						
-						if (i == 4) {
+						
+						if (i == 3 && prod4.length > 18) {
 											
-						alert(prod4);		
+								
 						document.body.insertAdjacentHTML('beforeEnd', '<iframe id="video4" width="50%" height="315" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
 						var newID = "https://www.youtube.com/embed/live_stream?channel=";
 						var compVid = newID.concat(prod4);
 						video4.src = compVid;
 						
-						document.getElementById("meme2").innerHTML = i;
 						
+						
+																
 					}
 												
 					}
@@ -98,22 +85,15 @@ function loadFunction() {
 
 </script>
 
-<div class="header">
-  <h1 id="meme1">YouView</h1>
-  <p>View multiple youtube livestreams at once.</p>
-</div>
-
 <!-- <a href='home.php?id=2489&user=tom'>Edit HTML</a> -->
 
+
   <div class="main">
-  
-    <h2 id="meme2"> YouView</h2>
 	 
   <label for="channelID">Channel ID:</label> 
-  <input type="text" id="CID" value="UC4k1Acx6M-9wGSBQFoDft2w" name="CID"><br><br>
+  <input type="text" id="CID" onfocus="this.value=''" maxlength="24" value="Enter Channel ID Here" name="CID"><br><br>
   
-  <div id="element"></div>
-  <button type="button" id="Submit" onclick="">Submit Channel ID</button>
+  <button type="button" class="Submit" id="Submit" onclick="">Submit Channel ID</button>
   
 	<script>
 	
@@ -122,11 +102,10 @@ function loadFunction() {
 	function myClick() {
 	
 		i++;
-		document.getElementById("meme2").innerHTML = i;
 		
 		if ( i == 1) {
 			videoID1 = document.getElementById("CID").value;
-			document.body.insertAdjacentHTML('beforeEnd', '<iframe id="video1" width="50%" height="315" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
+			document.body.insertAdjacentHTML('beforeEnd', '<iframe id="video1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
 			var newID = "https://www.youtube.com/embed/live_stream?channel=";
 			var compVid = newID.concat(videoID1);
 			video1.src = compVid;
@@ -145,7 +124,7 @@ function loadFunction() {
 
 		else if (i == 2) {
 			videoID2 = document.getElementById("CID").value;
-			document.body.insertAdjacentHTML('beforeEnd', '<iframe id="video2" width="50%" height="315" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
+			document.body.insertAdjacentHTML('beforeEnd', '<iframe id="video2" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
 			var newID = "https://www.youtube.com/embed/live_stream?channel=";
 			var compVid = newID.concat(videoID2);
 			video2.src = compVid;
@@ -161,7 +140,7 @@ function loadFunction() {
 		}	
 		else if (i == 3) {
 			videoID3 = document.getElementById("CID").value;
-			document.body.insertAdjacentHTML('beforeEnd', '<iframe id="video3" width="50%" height="315" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
+			document.body.insertAdjacentHTML('beforeEnd', '<iframe id="video3" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
 			var newID = "https://www.youtube.com/embed/live_stream?channel=";
 			var compVid = newID.concat(videoID3);
 			video3.src = compVid;
@@ -176,7 +155,7 @@ function loadFunction() {
 		}
 		else if (i == 4) {
 			videoID4 = document.getElementById("CID").value;
-			document.body.insertAdjacentHTML('beforeEnd', '<iframe id="video4" width="50%" height="315" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
+			document.body.insertAdjacentHTML('beforeEnd', '<iframe id="video4" frameborder="0" accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
 			var newID = "https://www.youtube.com/embed/live_stream?channel=";
 			var compVid = newID.concat(videoID4);
 			video4.src = compVid;
@@ -193,18 +172,11 @@ function loadFunction() {
 	
 	</script>
 	
-</div>
+	</div>
 
 
-<!-- 
-</form> 
-	<iframe width="560" height="315" src="https://www.youtube.com/embed/NdEngzCiK6M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
-	
-	<iframe width="560" height="315" src="https://www.youtube.com/embed/live_stream?channel=UCpnkOZVAhQDiy_eWcktdMFQ" frameborder="0" allowfullscreen></iframe>
 
-  </div>
-</div>
--->
+
 
 </body>
 </html>
