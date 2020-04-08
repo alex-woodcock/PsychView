@@ -14,7 +14,7 @@ body {
   -ms-flex: 70%; /* IE10 */
   flex: 70%;
 
-  position: fixed;
+  position: absolute;
   top: 50%;
   left: 50%;
   margin-left: -174px;
@@ -60,11 +60,83 @@ label {
 	padding:4px;
 	border: none;
 	position:relative;
-	left:10%;
+	left:12%;
 	outline: none;
 }
 
+.Hide {
+	
+	position:relative;
+	border-radius: 8px;
+	background-color: #ffffff;
+	padding:4px;
+	padding-right:15px;
+	padding-left:15px;
+	border: none;
+	
+	left:17%;
+	margin-right:20px;
+	outline: none;
+}
+
+.Show {
+     
+	border-radius: 8px;
+	background-color: #ffffff;
+	padding:4px;
+	padding-right:15px;
+	padding-left:15px;
+	border: none;
+	
+    position:absolute;
+    top:0;
+    right:0;
+	margin-right:20px;
+	margin-top:20px;
+	visibility:hidden;
+ }
+ 
+ .scrubEnd {	 
+    border-radius: 8px;
+	background-color: #ffffff;
+	padding:4px;
+	padding-right:15px;
+	padding-left:15px;
+	border: none;
+	
+	position:absolute;
+    top:0;
+    right:0;
+	margin-right:20px;
+	margin-top:55px;
+
+
+ }
+
 .Submit:active {
+  background: #e5e5e5;
+  -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+     -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+          box-shadow: inset 0px 0px 5px #c1c1c1;
+   outline: none;
+}
+
+.Hide:active {
+  background: #e5e5e5;
+  -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+     -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+          box-shadow: inset 0px 0px 5px #c1c1c1;
+   outline: none;
+}
+.Show:active {
+  background: #e5e5e5;
+  -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+     -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+          box-shadow: inset 0px 0px 5px #c1c1c1;
+   outline: none;
+}
+
+.Show2:active {
   background: #e5e5e5;
   -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
      -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
