@@ -92,6 +92,7 @@ function loadFunction() {
 						var newID = "https://www.youtube.com/embed/live_stream?channel=";
 						var compVid = newID.concat(prod4);
 						video4.src = compVid;
+                        hideUI();
 																					
 					}
 												
@@ -239,7 +240,8 @@ function loadFunction() {
 			    console.log(queryString);
 			    const urlParams = new URLSearchParams(queryString);
 			    const product = urlParams.get('ID')
-			    console.log(product);			
+                console.log(product);
+                hideUI();
 		} }
 } 
 	
