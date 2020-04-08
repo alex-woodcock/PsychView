@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <title>YouView</title>
@@ -32,12 +32,23 @@ function loadFunction() {
 			var prod2 = product.substring(28,52);
 			var prod3 = product.substring(56,80);
 			var prod4 = product.substring(84, 108);
-				
+
+            var streamHeight = window.innerHeight / 2;
+            var streamWidth = 50;
+
+            if (window.innerWidth > window.innerHeight * 16 / 9) {
+                streamWidth = streamHeight / window.innerWidth * 100 * 16 / 9;
+            }
+            else {
+                streamHeight = window.innerWidth / 16 * 9 * streamWidth / 100;
+            }
+
+
 			if (prod1.length >18){
 			
 			
 			
-			document.body.insertAdjacentHTML('beforeEnd', '<iframe id="video1" width="50%" height="315" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
+                document.body.insertAdjacentHTML('beforeEnd', '<iframe id="video1" width="' + streamWidth.toString() + '%" height="' + streamHeight.toString() + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
 			var newID = "https://www.youtube.com/embed/live_stream?channel=";
 			var compVid = newID.concat(prod1);
 			video1.src = compVid;
@@ -45,7 +56,7 @@ function loadFunction() {
 			
 					if (i == 1 && prod2.length > 18) {					
 							
-					document.body.insertAdjacentHTML('beforeEnd', '<iframe id="video2" width="50%" height="315" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
+                        document.body.insertAdjacentHTML('beforeEnd', '<iframe id="video2" width="' + streamWidth.toString() + '%" height="' + streamHeight.toString() + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
 					var newID = "https://www.youtube.com/embed/live_stream?channel=";
 					var compVid = newID.concat(prod2);
 					video2.src = compVid;
@@ -55,7 +66,7 @@ function loadFunction() {
 						if (i == 2 && prod3.length > 18) {
 											
 								
-						document.body.insertAdjacentHTML('beforeEnd', '<iframe id="video3" width="50%" height="315" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
+                            document.body.insertAdjacentHTML('beforeEnd', '<iframe id="video3" width="' + streamWidth.toString() + '%" height="' + streamHeight.toString() + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
 						var newID = "https://www.youtube.com/embed/live_stream?channel=";
 						var compVid = newID.concat(prod3);
 						video3.src = compVid;
@@ -66,7 +77,7 @@ function loadFunction() {
 						if (i == 3 && prod4.length > 18) {
 											
 								
-						document.body.insertAdjacentHTML('beforeEnd', '<iframe id="video4" width="50%" height="315" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
+                            document.body.insertAdjacentHTML('beforeEnd', '<iframe id="video4" width="' + streamWidth.toString() + '%" height="' + streamHeight.toString() + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
 						var newID = "https://www.youtube.com/embed/live_stream?channel=";
 						var compVid = newID.concat(prod4);
 						video4.src = compVid;
@@ -100,12 +111,21 @@ function loadFunction() {
 	document.getElementById("Submit").addEventListener("click", myClick);
 
 	function myClick() {
-	
+        var streamWidth = 50;
+        var streamHeight = window.innerHeight / 2;
+
+        if (window.innerWidth > window.innerHeight * 16 / 9) {
+            streamWidth = streamHeight / window.innerWidth * 100 * 16 / 9;
+        }
+        else {
+            streamHeight = window.innerWidth / 16 * 9 * streamWidth / 100;
+        }
+
 		i++;
 		
 		if ( i == 1) {
 			videoID1 = document.getElementById("CID").value;
-			document.body.insertAdjacentHTML('beforeEnd', '<iframe id="video1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
+            document.body.insertAdjacentHTML('beforeEnd', '<iframe id="video1" width="' + streamWidth.toString() + '%" height="' + streamHeight.toString() + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
 			var newID = "https://www.youtube.com/embed/live_stream?channel=";
 			var compVid = newID.concat(videoID1);
 			video1.src = compVid;
@@ -124,7 +144,7 @@ function loadFunction() {
 
 		else if (i == 2) {
 			videoID2 = document.getElementById("CID").value;
-			document.body.insertAdjacentHTML('beforeEnd', '<iframe id="video2" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
+            document.body.insertAdjacentHTML('beforeEnd', '<iframe id="video2" width="' + streamWidth.toString() + '%" height="' + streamHeight.toString() + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
 			var newID = "https://www.youtube.com/embed/live_stream?channel=";
 			var compVid = newID.concat(videoID2);
 			video2.src = compVid;
@@ -140,7 +160,7 @@ function loadFunction() {
 		}	
 		else if (i == 3) {
 			videoID3 = document.getElementById("CID").value;
-			document.body.insertAdjacentHTML('beforeEnd', '<iframe id="video3" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
+            document.body.insertAdjacentHTML('beforeEnd', '<iframe id="video3" width="' + streamWidth.toString() + '%" height="' + streamHeight.toString() + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
 			var newID = "https://www.youtube.com/embed/live_stream?channel=";
 			var compVid = newID.concat(videoID3);
 			video3.src = compVid;
@@ -155,7 +175,7 @@ function loadFunction() {
 		}
 		else if (i == 4) {
 			videoID4 = document.getElementById("CID").value;
-			document.body.insertAdjacentHTML('beforeEnd', '<iframe id="video4" frameborder="0" accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
+            document.body.insertAdjacentHTML('beforeEnd', '<iframe id="video4" width="' + streamWidth.toString() + '%" height="' + streamHeight.toString() + '" frameborder="0" accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
 			var newID = "https://www.youtube.com/embed/live_stream?channel=";
 			var compVid = newID.concat(videoID4);
 			video4.src = compVid;

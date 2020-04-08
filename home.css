@@ -32,8 +32,9 @@ body {
 }
 
 iframe {
-    width: 560px;
+    /* width: 560px;
     height: 315px;
+    Im not mad, alex, im just disappointed (not the me alex, the you alex, alex) */
     object-fit: cover;
 	position:relative;
 	text-align:center;
