@@ -6,7 +6,9 @@ body {
   margin: 0;
   background-color:#2b313b;
   text-align:center;
-  overflow: hidden
+  overflow: hidden;
+  height: 100vh;
+  width: 100%;
 }
 
 /* Main column */
@@ -60,7 +62,7 @@ label {
 	padding:4px;
 	border: none;
 	position:relative;
-	left:12%;
+	left:14%;
 	outline: none;
 }
 
@@ -96,7 +98,7 @@ label {
 	visibility:hidden;
  }
  
- .scrubEnd {	 
+ .reset{	 
     border-radius: 8px;
 	background-color: #ffffff;
 	padding:4px;
@@ -109,7 +111,7 @@ label {
     right:0;
 	margin-right:20px;
 	margin-top:55px;
-
+	outline: none;
 
  }
 
@@ -136,7 +138,7 @@ label {
    outline: none;
 }
 
-.Show2:active {
+.reset:active {
   background: #e5e5e5;
   -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
      -moz-box-shadow: inset 0px 0px 5px #c1c1c1;

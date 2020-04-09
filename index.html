@@ -1,260 +1,254 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-<title>YouView</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
- <script src="animeisforkids.js"></script> 
-
-<link rel="stylesheet" type="text/css" href="home.css">
-
-</head>
-
-<body>
-
-<button type="button" class="Show" id="Show" onclick="showUI()">Show UI</button>
-<!--  <button type="button" class="scrubEnd" id="scrubEnd" onclick="showUI()">Not Working yet</button> -->
-
-<body onload="loadFunction()" onresize="psychsThing()">
-
-
-<script>
-
-	var i = 0;
-	var videoID1;
-	var videoID2;
-	var videoID3;
-	var videoID4;
-	
-	const queryString = window.location.search;
-	console.log(queryString);
-	const urlParams = new URLSearchParams(queryString);
-	const product = urlParams.get('ID')
-			
-	var prod1 = product.substring(0,24);
-	var prod2 = product.substring(28,52);
-	var prod3 = product.substring(56,80);
-	var prod4 = product.substring(84, 108);
-
-function loadFunction() {		
-						
-			var streamHeight = window.innerHeight /2;
-			var streamWidth = 50;
-			console.log("I can feel it");
-			console.log("psych wuz here");
-	
-            if (window.innerWidth > window.innerHeight * 16 / 9) {
-                streamWidth = streamHeight / window.innerWidth * 100 * 16 / 9;
-                console.log("some of column a");
-                console.log("mathz = " + streamHeight / window.innerWidth * 100 * 16 / 9);
-                console.log("streamheight= " + streamHeight);
-                console.log("streamwidth = " + streamWidth);
-            }
-            else {
-                //do something
-                streamHeight = window.innerWidth / 16 * 9 * streamWidth / 100;
-                console.log("ALL of column b");
-            }
-
-			if (prod1.length >18){
-			
-			
-
-            document.body.insertAdjacentHTML('beforeEnd', '<iframe id="video1" width="' + streamWidth.toString() + '%" height="' + streamHeight.toString() + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
-			var newID = "https://www.youtube.com/embed/live_stream?channel=";
-			var compVid = newID.concat(prod1);
-			video1.src = compVid;
-			i = 1;
-			
-					if (i == 1 && prod2.length > 18) {					
-							
-                     document.body.insertAdjacentHTML('beforeEnd', '<iframe id="video2" width="' + streamWidth.toString() + '%" height="' + streamHeight.toString() + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
-					var newID = "https://www.youtube.com/embed/live_stream?channel=";
-					var compVid = newID.concat(prod2);
-					video2.src = compVid;
-					i = 2;					
-						
-					
-						if (i == 2 && prod3.length > 18) {
-											
-								
-                        document.body.insertAdjacentHTML('beforeEnd', '<iframe id="video3" width="' + streamWidth.toString() + '%" height="' + streamHeight.toString() + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
-						var newID = "https://www.youtube.com/embed/live_stream?channel=";
-						var compVid = newID.concat(prod3);
-						video3.src = compVid;
-						i = 3;
-						
-						
-						
-						if (i == 3 && prod4.length > 18) {
-											
-								
-                        document.body.insertAdjacentHTML('beforeEnd', '<iframe id="video4" width="' + streamWidth.toString() + '%" height="' + streamHeight.toString() + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
-						var newID = "https://www.youtube.com/embed/live_stream?channel=";
-						var compVid = newID.concat(prod4);
-						video4.src = compVid;
-                        hideUI();
-																					
-					}
-												
-					}
-					
-				}
-			}
-									
-		}
-
-    function psychsThing() {
-        var newStreamHeight = window.innerWidth / 32 * 9;     
-    }
-	
-</script>
-
-
-  <div id="main" class="main">
-	 
-  <label for="channelID">Channel ID:</label> 
-  <input type="text" id="CID" onfocus="this.value=''" maxlength="24" value="Enter Channel ID Here" name="CID"><br><br>
-  
-  
-  <button type="button" class="Submit" id="Submit" onclick="">Submit Channel ID</button>
-  <button type="button" class="Hide" id="Hide" onclick="hideUI();">Hide UI</button>
-  
-  
-	<script>
-		
-	document.getElementById("Submit").addEventListener("click", myClick);
-			
-				
-		function hideUI() {
-		
-			if (document.getElementById("video1")!=null) {
-				  document.getElementById('main').style.visibility="hidden";
-				  document.getElementById('Show').style.visibility="visible";
-				} else {
-					alert("Might want to add something to watch before hiding the UI you silly monkey! Psych wuz here lmao slipped this by you");
-				}				
-		}
-		
-		function showUI() {
-		
-				  document.getElementById('Show').style.visibility="hidden";
-				  document.getElementById('main').style.visibility="visible";
-								
-		}
-			
-        function myClick() {
-			
-			
-			
-			if (document.getElementById("CID").value.length < 24) {
-			alert("A Youtube channel ID is 24 characters long.");
-			}
-			
-			else {
-			
-			var streamWidth = 50;
-            //var streamHeight = window.innerWidth / 16 * 9 * streamWidth / 100;
-            var streamHeight = window.innerHeight / 2;
-            console.log("let me explain!");
-            console.log("streamWidth: " + streamWidth);
-            console.log("streamHeight: " + streamHeight);
-
-            if (window.innerWidth > window.innerHeight * 16 / 9) {
-                streamWidth = streamHeight / window.innerWidth * 100 * 16 / 9;
-            }
-            else {
-                //do something
-                streamHeight = window.innerWidth / 16 * 9 * streamWidth / 100;
-            }
-
-            /*
-            while (window.innerWidth * streamWidth / 100 / 16 * 9 > streamHeight) {
-
-                var streamWidth = streamWidth - 1;
-                //var streamHeight = window.innerWidth / 16 * 9 * streamWidth / 100;
-                console.log("maths =" + streamWidth / 9 * 16 * streamWidth / 100);
-                console.log("streamWidth: " + streamWidth);
-            }
-            */
-
-            console.log("and thats it.");
-        
-		    i++;
-		
-		    if ( i == 1) {
-			    videoID1 = document.getElementById("CID").value;
-                document.body.insertAdjacentHTML('beforeEnd', '<iframe id="video1" width="' + streamWidth.toString() + '%" height="' + streamHeight.toString() + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
-			    var newID = "https://www.youtube.com/embed/live_stream?channel=";
-			    var compVid = newID.concat(videoID1);
-			    video1.src = compVid;
-				window.location.href = window.location.href + "?ID=" + videoID1				
-	
-		
-			    const queryString = window.location.search;
-			    console.log(queryString);
-			    const urlParams = new URLSearchParams(queryString);
-			    const product = urlParams.get('ID')
-			    console.log(product);
-			
-		    }	
-
-		    else if (i == 2) {
-			    videoID2 = document.getElementById("CID").value;
-                document.body.insertAdjacentHTML('beforeEnd', '<iframe id="video2" width="' + streamWidth.toString() + '%" height="' + streamHeight.toString() + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
-			    var newID = "https://www.youtube.com/embed/live_stream?channel=";
-			    var compVid = newID.concat(videoID2);
-			    video2.src = compVid;
-			    window.location.href = window.location.href + "?ID=" + videoID2	
-				
-			
-
-			    const queryString = window.location.search;
-			    console.log(queryString);
-			    const urlParams = new URLSearchParams(queryString);
-			    const product = urlParams.get('ID')
-			    console.log(product);
-			
-		    }	
-		    else if (i == 3) {
-			    videoID3 = document.getElementById("CID").value;
-                document.body.insertAdjacentHTML('beforeEnd', '<iframe id="video3" width="' + streamWidth.toString() + '%" height="' + streamHeight.toString() + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
-			    var newID = "https://www.youtube.com/embed/live_stream?channel=";
-			    var compVid = newID.concat(videoID3);
-			    video3.src = compVid;
-			    window.location.href = window.location.href + "?ID=" + videoID3	
-			
-			    const queryString = window.location.search;
-			    console.log(queryString);
-			    const urlParams = new URLSearchParams(queryString);
-			    const product = urlParams.get('ID')
-			    console.log(product);
-			
-		    }
-		    else if (i == 4) {
-			    videoID4 = document.getElementById("CID").value;
-                document.body.insertAdjacentHTML('beforeEnd', '<iframe id="video4" width="' + streamWidth.toString() + '%" height="' + streamHeight.toString() + '" frameborder="0" allow="accelerometer"; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
-			    var newID = "https://www.youtube.com/embed/live_stream?channel=";
-			    var compVid = newID.concat(videoID4);
-			    video4.src = compVid;
-			    window.location.href = window.location.href + "?ID=" + videoID4
-			
-			    const queryString = window.location.search;
-			    console.log(queryString);
-			    const urlParams = new URLSearchParams(queryString);
-			    const product = urlParams.get('ID')
-                console.log(product);
-                hideUI();
-		} }
-} 
-	
+	<title>YouView</title>
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<script src="animeisforkids.js">
 	</script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js" type="text/javascript">
+	</script>
+	<script src="https://code.jquery.com/jquery-1.12.4.js">
+	</script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js">
+	</script>
+	<link href="home.css" rel="stylesheet" type="text/css">
+</head>
+<body onload="loadFunction()" onresize="psychsThing()">
+	<button class="Show" id="Show" onclick="showUI()" type="button">Show UI</button> <button class="reset" id="reset" onclick="resetUI()" type="button">Reset All</button> 
 	
+	<script>
+
+
+	   var i = 0;
+	   var videoID1;
+	   var videoID2;
+	   var videoID3;
+	   var videoID4;
+	   
+	   const queryString = window.location.search;
+	   console.log(queryString);
+	   const urlParams = new URLSearchParams(queryString);
+	   const product = urlParams.get('ID')
+	           
+	   var prod1 = product.substring(0,24);
+	   var prod2 = product.substring(28,52);
+	   var prod3 = product.substring(56,80);
+	   var prod4 = product.substring(84, 108);
+
+	function loadFunction() {       
+	                       
+	           var streamHeight = window.innerHeight /2;
+	           var streamWidth = 50;
+	           console.log("I can feel it");
+	           console.log("psych wuz here");
+	   
+	           if (window.innerWidth > window.innerHeight * 16 / 9) {
+	               streamWidth = streamHeight / window.innerWidth * 100 * 16 / 9;
+	               console.log("some of column a");
+	               console.log("mathz = " + streamHeight / window.innerWidth * 100 * 16 / 9);
+	               console.log("streamheight= " + streamHeight);
+	               console.log("streamwidth = " + streamWidth);
+	           }
+	           else {
+	               //do something
+	               streamHeight = window.innerWidth / 16 * 9 * streamWidth / 100;
+	               console.log("ALL of column b");
+	           }
+
+	           if (prod1.length >18){
+	           
+	           
+
+	           document.body.insertAdjacentHTML('beforeEnd', '<iframe id="video1" width="' + streamWidth.toString() + '%" height="' + streamHeight.toString() + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen><\/iframe>');
+	           var newID = "https://www.youtube.com/embed/live_stream?channel=";
+	           var compVid = newID.concat(prod1);
+	           video1.src = compVid;
+	           i = 1;
+	           
+	                   if (i == 1 && prod2.length > 18) {                  
+	                           
+	                    document.body.insertAdjacentHTML('beforeEnd', '<iframe id="video2" width="' + streamWidth.toString() + '%" height="' + streamHeight.toString() + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen><\/iframe>');
+	                   var newID = "https://www.youtube.com/embed/live_stream?channel=";
+	                   var compVid = newID.concat(prod2);
+	                   video2.src = compVid;
+	                   i = 2;                  
+	                       
+	                   
+	                       if (i == 2 && prod3.length > 18) {
+	                                           
+	                               
+	                       document.body.insertAdjacentHTML('beforeEnd', '<iframe id="video3" width="' + streamWidth.toString() + '%" height="' + streamHeight.toString() + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen><\/iframe>');
+	                       var newID = "https://www.youtube.com/embed/live_stream?channel=";
+	                       var compVid = newID.concat(prod3);
+	                       video3.src = compVid;
+	                       i = 3;
+	                       
+	                       
+	                       
+	                       if (i == 3 && prod4.length > 18) {
+	                                           
+	                               
+	                       document.body.insertAdjacentHTML('beforeEnd', '<iframe id="video4" width="' + streamWidth.toString() + '%" height="' + streamHeight.toString() + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen><\/iframe>');
+	                       var newID = "https://www.youtube.com/embed/live_stream?channel=";
+	                       var compVid = newID.concat(prod4);
+	                       video4.src = compVid;
+	                       hideUI();
+	                                                                                   
+	                   }
+	                                               
+	                   }
+	                   
+	               }
+	           }
+	                                   
+	       }
+
+	   function psychsThing() {
+	       var newStreamHeight = window.innerWidth / 32 * 9;     
+	   }
+	   
+	</script>
+	<div class="main" id="main">
+		<label for="channelID" onclick="CID.value='UCpnkOZVAhQDiy_eWcktdMFQ'; change();">Channel ID:</label> <input id="CID" maxlength="24" name="CID" onfocus="this.value=''" type="text" value="Enter Channel ID Here"><br>
+		<br>
+		<button class="Submit" id="Submit" onclick="" type="button">Submit Channel ID</button> <button class="Hide" id="Hide" onclick="hideUI();" type="button">Hide UI</button> 
+		
+		<script>
+		      
+		  document.getElementById("Submit").addEventListener("click", myClick);
+		              
+		      //$( function() {
+		          //$( "#main" ).draggable();
+		        //} );
+		        // Uncommenting this will make MAIN draggable
+		                      
+		      function change() {
+		      document.body.style.cursor = 'url("uhoh.cur"), default';
+		      }
+		                      
+		      function hideUI() {
+		      
+		          if (document.getElementById("video1")!=null) {
+		                document.getElementById('main').style.visibility="hidden";
+		                document.getElementById('Show').style.visibility="visible";
+		              } else {
+		                  alert("Might want to add something to watch before hiding the UI you silly monkey! Psych wuz here lmao slipped this by you");
+		              }               
+		      }
+		      
+		      function showUI() {
+		      
+		                document.getElementById('Show').style.visibility="hidden";
+		                document.getElementById('main').style.visibility="visible";                               
+		      }
+		          
+		      function myClick() {
+		          
+		          
+		          
+		          if (document.getElementById("CID").value.length < 24) {
+		          alert("A Youtube channel ID is 24 characters long.");
+		          }
+		          
+		          else {
+		          
+		          var streamWidth = 50;
+		          //var streamHeight = window.innerWidth / 16 * 9 * streamWidth / 100;
+		          var streamHeight = window.innerHeight / 2;
+		          console.log("let me explain!");
+		          console.log("streamWidth: " + streamWidth);
+		          console.log("streamHeight: " + streamHeight);
+
+		          if (window.innerWidth > window.innerHeight * 16 / 9) {
+		              streamWidth = streamHeight / window.innerWidth * 100 * 16 / 9;
+		          }
+		          else {
+		              //do something
+		              streamHeight = window.innerWidth / 16 * 9 * streamWidth / 100;
+		          }
+
+		          /*
+		          while (window.innerWidth * streamWidth / 100 / 16 * 9 > streamHeight) {
+
+		              var streamWidth = streamWidth - 1;
+		              //var streamHeight = window.innerWidth / 16 * 9 * streamWidth / 100;
+		              console.log("maths =" + streamWidth / 9 * 16 * streamWidth / 100);
+		              console.log("streamWidth: " + streamWidth);
+		          }
+		          */
+
+		          console.log("and thats it.");
+		      
+		          i++;
+		      
+		          if ( i == 1) {
+		              videoID1 = document.getElementById("CID").value;
+		              document.body.insertAdjacentHTML('beforeEnd', '<iframe id="video1" width="' + streamWidth.toString() + '%" height="' + streamHeight.toString() + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen><\/iframe>');
+		              var newID = "https://www.youtube.com/embed/live_stream?channel=";
+		              var compVid = newID.concat(videoID1);
+		              video1.src = compVid;
+		              window.location.href = window.location.href + "?ID=" + videoID1             
+		  
+		      
+		              const queryString = window.location.search;
+		              console.log(queryString);
+		              const urlParams = new URLSearchParams(queryString);
+		              const product = urlParams.get('ID')
+		              console.log(product);
+		          
+		          }   
+
+		          else if (i == 2) {
+		              videoID2 = document.getElementById("CID").value;
+		              document.body.insertAdjacentHTML('beforeEnd', '<iframe id="video2" width="' + streamWidth.toString() + '%" height="' + streamHeight.toString() + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen><\/iframe>');
+		              var newID = "https://www.youtube.com/embed/live_stream?channel=";
+		              var compVid = newID.concat(videoID2);
+		              video2.src = compVid;
+		              window.location.href = window.location.href + "?ID=" + videoID2 
+		              
+		          
+
+		              const queryString = window.location.search;
+		              console.log(queryString);
+		              const urlParams = new URLSearchParams(queryString);
+		              const product = urlParams.get('ID')
+		              console.log(product);
+		          
+		          }   
+		          else if (i == 3) {
+		              videoID3 = document.getElementById("CID").value;
+		              document.body.insertAdjacentHTML('beforeEnd', '<iframe id="video3" width="' + streamWidth.toString() + '%" height="' + streamHeight.toString() + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen><\/iframe>');
+		              var newID = "https://www.youtube.com/embed/live_stream?channel=";
+		              var compVid = newID.concat(videoID3);
+		              video3.src = compVid;
+		              window.location.href = window.location.href + "?ID=" + videoID3 
+		          
+		              const queryString = window.location.search;
+		              console.log(queryString);
+		              const urlParams = new URLSearchParams(queryString);
+		              const product = urlParams.get('ID')
+		              console.log(product);
+		          
+		          }
+		          else if (i == 4) {
+		              videoID4 = document.getElementById("CID").value;
+		              document.body.insertAdjacentHTML('beforeEnd', '<iframe id="video4" width="' + streamWidth.toString() + '%" height="' + streamHeight.toString() + '" frameborder="0" allow="accelerometer"; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen><\/iframe>');
+		              var newID = "https://www.youtube.com/embed/live_stream?channel=";
+		              var compVid = newID.concat(videoID4);
+		              video4.src = compVid;
+		              window.location.href = window.location.href + "?ID=" + videoID4
+		          
+		              const queryString = window.location.search;
+		              console.log(queryString);
+		              const urlParams = new URLSearchParams(queryString);
+		              const product = urlParams.get('ID')
+		              console.log(product);
+		              hideUI();
+		      } }
+		} 
+		  
+		</script>
 	</div>
-
-
-
-
-
 </body>
 </html>
