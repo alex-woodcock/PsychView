@@ -145,6 +145,8 @@ function loadFunction() {
 			
         function myClick() {
 			
+			
+			
 			if (document.getElementById("CID").value.length < 24) {
 			alert("A Youtube channel ID is 24 characters long.");
 			}
@@ -186,8 +188,7 @@ function loadFunction() {
 			    var newID = "https://www.youtube.com/embed/live_stream?channel=";
 			    var compVid = newID.concat(videoID1);
 			    video1.src = compVid;
-			
-			    history.pushState({page: 1}, "title 2", "?ID=" + videoID1)		
+				window.location.href = window.location.href + "?ID=" + videoID1				
 	
 		
 			    const queryString = window.location.search;
@@ -204,7 +205,8 @@ function loadFunction() {
 			    var newID = "https://www.youtube.com/embed/live_stream?channel=";
 			    var compVid = newID.concat(videoID2);
 			    video2.src = compVid;
-			    history.pushState({page: 2}, "title 2", "?ID=" + videoID1 + "?ID=" + videoID2)	
+			    window.location.href = window.location.href + "?ID=" + videoID2	
+				
 			
 
 			    const queryString = window.location.search;
@@ -220,7 +222,7 @@ function loadFunction() {
 			    var newID = "https://www.youtube.com/embed/live_stream?channel=";
 			    var compVid = newID.concat(videoID3);
 			    video3.src = compVid;
-			    history.pushState({page: 3}, "title 2", "?ID=" + videoID1 + "?ID=" + videoID2 + "?ID=" + videoID3)
+			    window.location.href = window.location.href + "?ID=" + videoID3	
 			
 			    const queryString = window.location.search;
 			    console.log(queryString);
@@ -235,7 +237,7 @@ function loadFunction() {
 			    var newID = "https://www.youtube.com/embed/live_stream?channel=";
 			    var compVid = newID.concat(videoID4);
 			    video4.src = compVid;
-			    history.pushState({page: 4}, "title 2", "?ID=" + videoID1 + "?ID=" + videoID2 + "?ID=" + videoID3 + "?ID=" + videoID4)
+			    window.location.href = window.location.href + "?ID=" + videoID4
 			
 			    const queryString = window.location.search;
 			    console.log(queryString);
