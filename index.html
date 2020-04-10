@@ -14,6 +14,7 @@
 <button type="button" class="Show" id="Show" onclick="showUI()">Show UI</button>
 <!--  <button type="button" class="scrubEnd" id="scrubEnd" onclick="showUI()">Not Working yet</button> -->
 
+
 <body onload="loadFunction()" onresize="psychsThing()">
 
 
@@ -39,20 +40,16 @@ function loadFunction() {
 						
 			var streamHeight = window.innerHeight /2;
 			var streamWidth = 50;
-			console.log("I can feel it");
-			console.log("psych wuz here");
+	
 	
             if (window.innerWidth > window.innerHeight * 16 / 9) {
                 streamWidth = streamHeight / window.innerWidth * 100 * 16 / 9;
-                console.log("some of column a");
-                console.log("mathz = " + streamHeight / window.innerWidth * 100 * 16 / 9);
-                console.log("streamheight= " + streamHeight);
-                console.log("streamwidth = " + streamWidth);
+                
             }
             else {
                 //do something
                 streamHeight = window.innerWidth / 16 * 9 * streamWidth / 100;
-                console.log("ALL of column b");
+               
             }
 
 			if (prod1.length >18){
@@ -117,6 +114,7 @@ function loadFunction() {
   
   
   <button type="button" class="Submit" id="Submit" onclick="">Submit Channel ID</button>
+  <button type="button" class="redirect" id="redirectAbout" onclick="window.location='about/index.html'">About</button>
   <button type="button" class="Hide" id="Hide" onclick="hideUI();">Hide UI</button>
   
   

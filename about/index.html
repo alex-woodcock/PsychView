@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">   
+   
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+ 
+     <!-- Site Metas -->
+    <title>YouView</title>  
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Colors CSS -->
+    <link rel="stylesheet" href="css/colors.css">
+    <!-- ALL VERSION CSS -->
+    <link rel="stylesheet" href="css/versions.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/custom.css">
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body class="barber_version">
+
+    <!-- LOADER -->
+    <div id="preloader">
+        <div class="cube-wrapper">
+		  <div class="cube-folding">
+			<span class="leaf1"></span>
+			<span class="leaf2"></span>
+			<span class="leaf3"></span>
+			<span class="leaf4"></span>
+		  </div>
+		  <span class="loading" data-name="Loading">Loading About page</span>
+		</div>
+    </div><!-- end loader -->
+    <!-- END LOADER -->
+
+    <div id="wrapper">
+
+        <!-- Sidebar-wrapper -->
+        <div id="sidebar-wrapper">
+			<div class="side-top">
+				<ul class="sidebar-nav">
+					<li><a class="active" href="../index.html">View Streams</a></li>
+					<li><a href="roadmap1.html">Roadmap 1</a></li>
+					<li><a href="roadmap2.html">Roadmap 2</a></li>
+					<li><a href="roadmap3.html">Roadmap 3</a></li>
+					<li><a href="roadmap4.html">Roadmap 4</a></li>
+					<li><a href="roadmap5.html">Roadmap 5</a></li>
+				</ul>
+			</div>
+        </div>
+        <!-- End Sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <a href="#menu-toggle" class="menuopener" id="menu-toggle"><i class="fa fa-bars"></i></a>
+			
+            <div id="home" class="parallax first-section-home" data-stellar-background-ratio="0.2" style="background-image:url('img/i.jpg');">
+                <div class="container-fluid">
+                    <div class="row">
+						<div id="full-width" class="owl-carousel owl-theme">
+							<div class="text-center item">
+								<div class="col-md-8 col-md-offset-2 col-sm-12">
+									<div class="big-tagline text-center">
+										<h2><strong>YouView</strong><br>
+										</h2>
+										<p class="lead">Welcome to YouView, a multistream viewing platform.</p>
+										
+									</div>
+								</div>
+							</div>
+							<div class="text-center item">
+								<div class="col-md-8 col-md-offset-2 col-sm-12">
+									<div class="big-tagline text-center">
+										<h2><strong>RoadMap 1</strong><br>
+                                        Concept</h2>
+										<p class="lead">Summary</p>
+										<a href="#" class="btn btn-light btn-radius btn-brd grd1 effect-1 butn">Check it out!</a>
+									</div>
+								</div>
+							</div>
+							<div class="text-center item">
+								<div class="col-md-8 col-md-offset-2 col-sm-12">
+									<div class="big-tagline text-center">
+										<h2><strong>RoadMap 2</strong><br>
+                                        Concept</h2>
+										<p class="lead">Summary</p>
+										<a href="#" class="btn btn-light btn-radius btn-brd grd1 effect-1 butn">Check it out!</a>
+									</div>
+								</div>
+							</div>
+						</div>
+                    </div><!-- end row -->
+                </div><!-- end container -->
+            </div><!-- end section -->
+
+
+
+            <div class="copyrights">
+                <div class="container-fluid">
+                    <div class="footer-distributed">
+                        <div class="footer-left">
+                            
+                            <p class="footer-company-name">Yinkidy Yoinkidy your intellectual property is my property</a></p>
+                        </div>
+
+                        <div class="footer-right">
+                            
+                        </div>
+                    </div>
+                </div><!-- end container -->
+            </div><!-- end copyrights -->
+        </div>
+    </div><!-- end wrapper -->
+
+    <a href="#" id="scroll-to-top" class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
+
+    <!-- ALL JS FILES -->
+    <script src="js/all.js"></script>
+	<script src="js/responsive-tabs.js"></script>
+    <!-- ALL PLUGINS -->
+    <script src="js/custom.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    (function($) {
+        "use strict";
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+        smoothScroll.init({
+            selector: '[data-scroll]', // Selector for links (must be a class, ID, data attribute, or element tag)
+            selectorHeader: null, // Selector for fixed headers (must be a valid CSS selector) [optional]
+            speed: 500, // Integer. How fast to complete the scroll in milliseconds
+            easing: 'easeInOutCubic', // Easing pattern to use
+            offset: 0, // Integer. How far to offset the scrolling anchor location in pixels
+            callback: function ( anchor, toggle ) {} // Function to run after scrolling
+        });
+    })(jQuery);
+    </script>
+
+</body>
+</html>
