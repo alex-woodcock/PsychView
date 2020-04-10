@@ -12,7 +12,7 @@ body {
 }
 
 /* Main column */
-.main {   
+#main {   
   -ms-flex: 70%; /* IE10 */
   flex: 70%;
 
@@ -90,6 +90,7 @@ label {
 	padding-left:15px;
 	border: none;
 	
+	width:95px;
     position:absolute;
     top:0;
     right:0;
@@ -106,13 +107,75 @@ label {
 	padding-left:15px;
 	border: none;
 	
+	width:95px;
 	position:absolute;
     top:0;
     right:0;
 	margin-right:20px;
 	margin-top:55px;
 	outline: none;
+ }
+ 
+  .change1{	 
+    border-radius: 8px;
+	background-color: #ffffff;
+	padding:4px;
+	padding-right:15px;
+	padding-left:15px;
+	border: none;
+	width:95px;
+	position:absolute;
+    top:0;
+    right:0;
+	margin-right:20px;
+	margin-top:90px;
+	outline: none;
+ }
 
+  .change2{	 
+    border-radius: 8px;
+	background-color: #ffffff;
+	padding:4px;
+	padding-right:15px;
+	padding-left:15px;
+	border: none;
+	width:95px;
+	position:absolute;
+    top:0;
+    right:0;
+	margin-right:20px;
+	margin-top:125px;
+	outline: none;
+ }
+   .change3{	 
+    border-radius: 8px;
+	background-color: #ffffff;
+	padding:4px;
+	padding-right:15px;
+	padding-left:15px;
+	border: none;
+	width:95px;
+	position:absolute;
+    top:0;
+    right:0;
+	margin-right:20px;
+	margin-top:160px;
+	outline: none;
+ }
+   .change4{	 
+    border-radius: 8px;
+	background-color: #ffffff;
+	padding:4px;
+	padding-right:15px;
+	padding-left:15px;
+	border: none;
+	width:95px;
+	position:absolute;
+    top:0;
+    right:0;
+	margin-right:20px;
+	margin-top:195px;
+	outline: none;
  }
 
 .Submit:active {
@@ -139,6 +202,36 @@ label {
 }
 
 .reset:active {
+  background: #e5e5e5;
+  -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+     -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+          box-shadow: inset 0px 0px 5px #c1c1c1;
+   outline: none;
+}
+
+.change1:active {
+  background: #e5e5e5;
+  -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+     -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+          box-shadow: inset 0px 0px 5px #c1c1c1;
+   outline: none;
+}
+
+.change2:active {
+  background: #e5e5e5;
+  -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+     -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+          box-shadow: inset 0px 0px 5px #c1c1c1;
+   outline: none;
+}
+.change3:active {
+  background: #e5e5e5;
+  -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+     -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+          box-shadow: inset 0px 0px 5px #c1c1c1;
+   outline: none;
+}
+.change4:active {
   background: #e5e5e5;
   -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
      -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
