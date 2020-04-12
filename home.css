@@ -94,7 +94,7 @@ label {
     position:absolute;
     top:0;
     right:0;
-	margin-right:20px;
+	margin-right:10px;
 	margin-top:20px;
 	visibility:hidden;
  }
@@ -111,7 +111,7 @@ label {
 	position:absolute;
     top:0;
     right:0;
-	margin-right:20px;
+	margin-right:10px;
 	margin-top:55px;
 	outline: none;
  }
@@ -127,7 +127,7 @@ label {
 	position:absolute;
     top:0;
     right:0;
-	margin-right:20px;
+	margin-right:10px;
 	margin-top:90px;
 	outline: none;
  }
@@ -143,7 +143,7 @@ label {
 	position:absolute;
     top:0;
     right:0;
-	margin-right:20px;
+	margin-right:10px;
 	margin-top:125px;
 	outline: none;
  }
@@ -158,7 +158,7 @@ label {
 	position:absolute;
     top:0;
     right:0;
-	margin-right:20px;
+	margin-right:10px;
 	margin-top:160px;
 	outline: none;
  }
@@ -173,10 +173,37 @@ label {
 	position:absolute;
     top:0;
     right:0;
-	margin-right:20px;
+	margin-right:10px;
 	margin-top:195px;
 	outline: none;
  }
+
+   .modalCSS{	 
+    border-radius: 8px;
+	background-color: #a862bd;
+	padding:4px;
+	padding-right:15px;
+	padding-left:15px;
+	border: none;
+	width:95px;
+	position:absolute;
+    top:0;
+    right:0;
+	margin-right:10px;
+	margin-top:260px;
+	outline: none;
+	color:white;
+ }
+ 
+ #form1 {
+	 font-size:21px;
+ }
+ 
+ textarea.md-textarea {
+  min-height: 30rem;
+  min-width: 50rem;
+  resize: none;
+}
 
 .Submit:active {
   background: #e5e5e5;
