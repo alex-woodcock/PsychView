@@ -188,6 +188,97 @@ label {
 	outline: none;
  }
 
+.iAmAlex {
+    border-radius: 8px;
+    background-color: #ffffff;
+    padding: 4px;
+    padding-right: 15px;
+    padding-left: 15px;
+    border: none;
+    width: 95px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 10px;
+    margin-top: 230px;
+    outline: none;
+}
+.iAmZowta {
+    border-radius: 8px;
+    background-color: #ffffff;
+    padding: 4px;
+    padding-right: 15px;
+    padding-left: 15px;
+    border: none;
+    width: 95px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 10px;
+    margin-top: 265px;
+    outline: none;
+}
+.iAmBob {
+    border-radius: 8px;
+    background-color: #ffffff;
+    padding: 4px;
+    padding-right: 15px;
+    padding-left: 15px;
+    border: none;
+    width: 95px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 10px;
+    margin-top: 300px;
+    outline: none;
+}
+.iAmLee {
+    border-radius: 8px;
+    background-color: #ffffff;
+    padding: 4px;
+    padding-right: 15px;
+    padding-left: 15px;
+    border: none;
+    width: 95px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 10px;
+    margin-top: 335px;
+    outline: none;
+}
+.iAmPete {
+    border-radius: 8px;
+    background-color: #ffffff;
+    padding: 4px;
+    padding-right: 15px;
+    padding-left: 15px;
+    border: none;
+    width: 95px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 10px;
+    margin-top: 370px;
+    outline: none;
+}
+.iAmDan {
+    border-radius: 8px;
+    background-color: #ffffff;
+    padding: 4px;
+    padding-right: 15px;
+    padding-left: 15px;
+    border: none;
+    width: 95px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 10px;
+    margin-top: 405px;
+    outline: none;
+}
+
    .modalCSS{	 
     border-radius: 8px;
 	background-color: #a862bd;
@@ -200,7 +291,7 @@ label {
     top:0;
     right:0;
 	margin-right:10px;
-	margin-top:260px;
+	margin-top:500px;
 	outline: none;
 	color:white;
  }

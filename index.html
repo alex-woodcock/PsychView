@@ -34,12 +34,12 @@
     <button class="change3" id="change3" onclick="change3()" type="button">Edit Vid 3</button>
     <button class="change4" id="change4" onclick="change4()" type="button">Edit Vid 4</button>
 
-    <button class="change1" id="change1" onclick="change1()" type="button">I'm Alex</button>
-    <button class="change2" id="change2" onclick="change2()" type="button">I'm Zowta</button>
-    <button class="change3" id="change3" onclick="change3()" type="button">I'm Bob</button>
-    <button class="change4" id="change4" onclick="change4()" type="button">I'm Lee</button>
-    <button class="change4" id="change4" onclick="change4()" type="button">I'm Price</button>
-    <button class="change4" id="change4" onclick="change4()" type="button">I'm Dan</button>
+    <button class="iAmAlex" id="iAmAlex" onclick="iAm('alex')" type="button">I'm Alex</button>
+    <button class="iAmZowta" id="iAmZowta" onclick="iAm('zowta')" type="button">I'm Zowta</button>
+    <button class="iAmBob" id="iAmBob" onclick="iAm('bob')" type="button">I'm Bob</button>
+    <button class="iAmLee" id="iAmLee" onclick="iAm('lee')" type="button">I'm Lee</button>
+    <button class="iAmPete" id="iAmPete" onclick="iAm('pete')" type="button">I'm Pete</button>
+    <button class="iAmDan" id="iAmDan" onclick="change4()" type="button">I'm Dan</button>
 
     <button type="button" class="modalCSS" id="storedIDs" data-toggle="modal" data-target="#myModal">Stored ID's</button>
 
@@ -76,7 +76,7 @@
         var videoID4;
 
         const queryString = window.location.search;
-        console.log(queryString);
+
         const urlParams = new URLSearchParams(queryString);
         const product = urlParams.get('ID')
 
@@ -286,6 +286,30 @@
                 document.getElementById("video4").src = compVid;
             }
 
+            function change1to(channelLink) {
+                var newID = "https://www.youtube.com/embed/live_stream?channel=";
+                var compVid = newID.concat(channelLink);
+                document.getElementById("video1").src = compVid;
+            }
+
+            function change2to(channelLink) {
+                var newID = "https://www.youtube.com/embed/live_stream?channel=";
+                var compVid = newID.concat(channelLink);
+                document.getElementById("video2").src = compVid;
+            }
+
+            function change3to(channelLink) {
+                var newID = "https://www.youtube.com/embed/live_stream?channel=";
+                var compVid = newID.concat(channelLink);
+                document.getElementById("video3").src = compVid;
+            }
+
+            function change4to(channelLink) {
+                var newID = "https://www.youtube.com/embed/live_stream?channel=";
+                var compVid = newID.concat(channelLink);
+                document.getElementById("video4").src = compVid;
+            }
+
             function hideUI() {
 
                 if (document.getElementById("video1") != null) {
@@ -297,6 +321,11 @@
                     document.getElementById('change4').style.visibility = "hidden";
                     document.getElementById('storedIDs').style.visibility = "hidden";
                     document.getElementById('reset').style.visibility = "hidden";
+
+                    document.getElementById('iAmAlex').style.visibility = "hidden";
+                    document.getElementById('change2').style.visibility = "hidden";
+                    document.getElementById('change3').style.visibility = "hidden";
+                    document.getElementById('change4').style.visibility = "hidden";
                 } else {
                     alert("Might want to add something to watch before hiding the UI you silly monkey! Psych wuz here lmao slipped this by you");
                 }
@@ -312,10 +341,14 @@
                 document.getElementById('change4').style.visibility = "visible";
                 document.getElementById('storedIDs').style.visibility = "visible";
                 document.getElementById('reset').style.visibility = "visible";
+
+                document.getElementById('iAmAlex').style.visibility = "hidden";
+                document.getElementById('change2').style.visibility = "hidden";
+                document.getElementById('change3').style.visibility = "hidden";
+                document.getElementById('change4').style.visibility = "hidden";
             }
 
             function myClick() {
-
                 if (document.getElementById("CID").value.length < 24) {
                     alert("A Youtube channel ID is 24 characters long.");
                 }
@@ -445,6 +478,42 @@
                 }
             }
 
+            function iAm(person) {
+                if (person == "alex") {
+                    change1to("UCpnkOZVAhQDiy_eWcktdMFQ");
+                    change2to("UCzdyI1vpYMgtvinlz0eEkKA");
+                    change3to("UC4k1Acx6M-9wGSBQFoDft2w");
+                    change4to("UCM8HeNSsIIJDoPATLP--KFw");
+                }
+
+                if (person == "zowta") {
+                    change1to("UCs7puQLFlD6JXUrcp_Q0GLw");
+                    change2to("UCzdyI1vpYMgtvinlz0eEkKA");
+                    change3to("UC4k1Acx6M-9wGSBQFoDft2w");
+                    change4to("UCM8HeNSsIIJDoPATLP--KFw");
+                }
+
+                if (person == "bob") {
+                    change1to("UCs7puQLFlD6JXUrcp_Q0GLw");
+                    change2to("UCzdyI1vpYMgtvinlz0eEkKA");
+                    change3to("UC4k1Acx6M-9wGSBQFoDft2w");
+                    change4to("UCs7puQLFlD6JXUrcp_Q0GLw");
+                }
+
+                if (person == "lee") {
+                    change1to("UCs7puQLFlD6JXUrcp_Q0GLw");
+                    change2to("UCs7puQLFlD6JXUrcp_Q0GLw");
+                    change3to("UC4k1Acx6M-9wGSBQFoDft2w");
+                    change4to("UCM8HeNSsIIJDoPATLP--KFw");
+                }
+
+                if (person == "pete") {
+                    change1to("UCs7puQLFlD6JXUrcp_Q0GLw");
+                    change2to("UCzdyI1vpYMgtvinlz0eEkKA");
+                    change3to("UCs7puQLFlD6JXUrcp_Q0GLw");
+                    change4to("UCM8HeNSsIIJDoPATLP--KFw");
+                }
+            }
         </script>
     </div>
 </body>
