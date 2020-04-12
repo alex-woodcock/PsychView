@@ -38,8 +38,9 @@ iframe {
     height: 315px;
     Im not mad, alex, im just disappointed (not the me alex, the you alex, alex) */
     object-fit: cover;
-	position:relative;
+	/*position:relative;*/
 	text-align:center;
+    vertical-align: middle;
 	line-height: 0;
 	margin-bottom: -4px !important
 
@@ -50,6 +51,15 @@ input  {
 	border-radius: 15px;
 	text-align: center; 
 	outline:none;
+}
+
+/*doesnt actually do anything*/
+stayOnTop{
+    position:fixed;
+}
+
+video {
+    vertical-align: middle;
 }
 
 label {

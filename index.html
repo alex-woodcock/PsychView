@@ -27,13 +27,13 @@
 </head>
 <body onload="loadFunction()" onresize="psychsThing()">
 
-	<button class="Show" id="Show" onclick="showUI()" type="button">Show UI</button> 
+	<button class="Show stayOnTop" id="Show" onclick="showUI()" type="button">Show UI</button> 
 	<button class="reset" id="reset" onclick="resetUI()" type="button">Reset All</button>
 	<button class="change1" id="change1" onclick="change1()" type="button">Edit Vid 1</button>
 	<button class="change2" id="change2" onclick="change2()" type="button">Edit Vid 2</button> 	
 	<button class="change3" id="change3" onclick="change3()" type="button">Edit Vid 3</button> 	
 	<button class="change4" id="change4" onclick="change4()" type="button">Edit Vid 4</button> 
-	<button type="button" class="modalCSS" data-toggle="modal" data-target="#myModal">Stored ID's</button>		
+	<button type="button" class="modalCSS" id="storedIDs" data-toggle="modal" data-target="#myModal">Stored ID's</button>		
 	
 	<div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog modal-md">
@@ -144,7 +144,7 @@
                 
 	           if (prod1.length >18){           
 
-	           document.body.insertAdjacentHTML('beforeEnd', '<iframe id="video1" width="' + streamWidth.toString() + '%" height="' + streamHeight.toString() + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen><\/iframe>');
+	           document.body.insertAdjacentHTML('beforeEnd', '<iframe id="video1" class="video" width="' + streamWidth.toString() + '%" height="' + streamHeight.toString() + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen><\/iframe>');
 	           var newID = "https://www.youtube.com/embed/live_stream?channel=";
 	           var compVid = newID.concat(prod1);
 	           video1.src = compVid;
@@ -289,7 +289,13 @@
 		      
 		          if (document.getElementById("video1")!=null) {
 		                document.getElementById('main').style.visibility="hidden";
-		                document.getElementById('Show').style.visibility="visible";
+                      document.getElementById('Show').style.visibility = "visible";
+                      document.getElementById('change1').style.visibility = "hidden";
+                      document.getElementById('change2').style.visibility = "hidden";
+                      document.getElementById('change3').style.visibility = "hidden";
+                      document.getElementById('change4').style.visibility = "hidden";
+                      document.getElementById('storedIDs').style.visibility = "hidden";
+                      document.getElementById('reset').style.visibility = "hidden";
 		              } else {
 		                  alert("Might want to add something to watch before hiding the UI you silly monkey! Psych wuz here lmao slipped this by you");
 		              }               
@@ -298,7 +304,13 @@
 		      function showUI() {
 		      
 		                document.getElementById('Show').style.visibility="hidden";
-		                document.getElementById('main').style.visibility="visible";                               
+                  document.getElementById('main').style.visibility = "visible";
+                  document.getElementById('change1').style.visibility = "visible";
+                  document.getElementById('change2').style.visibility = "visible";
+                  document.getElementById('change3').style.visibility = "visible";
+                  document.getElementById('change4').style.visibility = "visible";
+                  document.getElementById('storedIDs').style.visibility = "visible";
+                  document.getElementById('reset').style.visibility = "visible";
 		      }
 		          
 		      function myClick() {
