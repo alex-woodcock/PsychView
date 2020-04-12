@@ -1,453 +1,451 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>YouView</title>
-	<link rel="icon" href="8.png" type="image/png" sizes="16x16">
-	<meta charset="UTF-8">
-	<meta content="width=device-width, initial-scale=1" name="viewport">
-	
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-	<script src="animeisforkids.js">
-	</script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	</script>
-	<script src="https://code.jquery.com/jquery-1.12.4.js">
-	</script>
-	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js">
-	</script>
-	<link href="home.css" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" href="anime/animate.min.css">
+    <title>YouView</title>
+    <link rel="icon" href="8.png" type="image/png" sizes="16x16">
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
 
-	
-	 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="animeisforkids.js">
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    </script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js">
+    </script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js">
+    </script>
+    <link href="home.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="anime/animate.min.css">
 
-	
+
+
+
+
 </head>
 <body onload="loadFunction()" onresize="psychsThing()">
 
-	<button class="Show stayOnTop" id="Show" onclick="showUI()" type="button">Show UI</button> 
-	<button class="reset" id="reset" onclick="resetUI()" type="button">Reset All</button>
-	<button class="change1" id="change1" onclick="change1()" type="button">Edit Vid 1</button>
-	<button class="change2" id="change2" onclick="change2()" type="button">Edit Vid 2</button> 	
-	<button class="change3" id="change3" onclick="change3()" type="button">Edit Vid 3</button> 	
-	<button class="change4" id="change4" onclick="change4()" type="button">Edit Vid 4</button> 
-	<button type="button" class="modalCSS" id="storedIDs" data-toggle="modal" data-target="#myModal">Stored ID's</button>		
-	
-	<div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog modal-md">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Store your commonly used ID's in here</h4>
-        </div>
-        <div class="modal-body">
-          <textarea spellcheck="false" type="text" id="form1" class="md-textarea pt-1 py-0 pb-0"></textarea>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-	<script>	
-	
-	   document.getElementById("form1").addEventListener("keyup", storedID);
-	   
-	        function storedID() {
-			localStorage.setItem("lastname", form1.value);
-			}
-			
-	   var i = 0;
-	   var b = 1;
-	   var videoID1;
-	   var videoID2;
-	   var videoID3;
-	   var videoID4;
-	   
-	   const queryString = window.location.search;
-	   console.log(queryString);
-	   const urlParams = new URLSearchParams(queryString);
-	   const product = urlParams.get('ID')
-	           
-	   var prod1 = product.substring(0,24);
-	   var prod2 = product.substring(28,52);
-	   var prod3 = product.substring(56,80);
-	   var prod4 = product.substring(84, 108);	 
+    <button class="Show stayOnTop" id="Show" onclick="showUI()" type="button">Show UI</button>
+    <button class="reset" id="reset" onclick="resetUI()" type="button">Reset All</button>
+    <button class="change1" id="change1" onclick="change1()" type="button">Edit Vid 1</button>
+    <button class="change2" id="change2" onclick="change2()" type="button">Edit Vid 2</button>
+    <button class="change3" id="change3" onclick="change3()" type="button">Edit Vid 3</button>
+    <button class="change4" id="change4" onclick="change4()" type="button">Edit Vid 4</button>
 
-	function loadFunction() {       			
-				
-			   var storedText = localStorage.getItem("lastname", );
-			   document.getElementById("form1").value = storedText;
-						   
-	           var streamHeight = window.innerHeight /2;
-	           var streamWidth = 50;
-	           console.log("I can feel it");
-	           console.log("psych wuz here");
-	   
-	           if (window.innerWidth > window.innerHeight * 16 / 9) {
-	               streamWidth = streamHeight / window.innerWidth * 100 * 16 / 9;
-	               console.log("some of column a");
-	               console.log("mathz = " + streamHeight / window.innerWidth * 100 * 16 / 9);
-	               console.log("streamheight= " + streamHeight);
-	               console.log("streamwidth = " + streamWidth);
-	           }
-	           else {
-	               //do something
-	               streamHeight = window.innerWidth / 16 * 9 * streamWidth / 100;
-	               console.log("ALL of column b");
+    <button class="change1" id="change1" onclick="change1()" type="button">I'm Alex</button>
+    <button class="change2" id="change2" onclick="change2()" type="button">I'm Zowta</button>
+    <button class="change3" id="change3" onclick="change3()" type="button">I'm Bob</button>
+    <button class="change4" id="change4" onclick="change4()" type="button">I'm Lee</button>
+    <button class="change4" id="change4" onclick="change4()" type="button">I'm Price</button>
+    <button class="change4" id="change4" onclick="change4()" type="button">I'm Dan</button>
+
+    <button type="button" class="modalCSS" id="storedIDs" data-toggle="modal" data-target="#myModal">Stored ID's</button>
+
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Store your commonly used ID's in here</h4>
+                </div>
+                <div class="modal-body">
+                    <textarea spellcheck="false" type="text" id="form1" class="md-textarea pt-1 py-0 pb-0"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        document.getElementById("form1").addEventListener("keyup", storedID);
+
+        function storedID() {
+            localStorage.setItem("lastname", form1.value);
         }
 
-        //this is the actual elvel the indendation should be. go fuck yourself
-        if (prod3.length > 18) {
-            var streamWidth = 50;
-            //var streamHeight = window.innerWidth / 16 * 9 * streamWidth / 100;
+        var i = 0;
+        var b = 1;
+        var videoID1;
+        var videoID2;
+        var videoID3;
+        var videoID4;
+
+        const queryString = window.location.search;
+        console.log(queryString);
+        const urlParams = new URLSearchParams(queryString);
+        const product = urlParams.get('ID')
+
+        var prod1 = product.substring(0, 24);
+        var prod2 = product.substring(28, 52);
+        var prod3 = product.substring(56, 80);
+        var prod4 = product.substring(84, 108);
+
+        function loadFunction() {
+
+            var storedText = localStorage.getItem("lastname");
+            document.getElementById("form1").value = storedText;
+
             var streamHeight = window.innerHeight / 2;
-            console.log("let me explain!");
-            console.log("streamWidth: " + streamWidth);
-            console.log("streamHeight: " + streamHeight);
+            var streamWidth = 50;
+            console.log("I can feel it");
+            console.log("psych wuz here");
 
             if (window.innerWidth > window.innerHeight * 16 / 9) {
                 streamWidth = streamHeight / window.innerWidth * 100 * 16 / 9;
+                console.log("some of column a");
+                console.log("mathz = " + streamHeight / window.innerWidth * 100 * 16 / 9);
+                console.log("streamheight= " + streamHeight);
+                console.log("streamwidth = " + streamWidth);
             }
             else {
                 //do something
                 streamHeight = window.innerWidth / 16 * 9 * streamWidth / 100;
+                console.log("ALL of column b");
             }
+
+            //this is the actual elvel the indendation should be. go fuck yourself
+            if (prod3.length > 18) {
+                var streamWidth = 50;
+                //var streamHeight = window.innerWidth / 16 * 9 * streamWidth / 100;
+                var streamHeight = window.innerHeight / 2;
+                console.log("let me explain!");
+                console.log("streamWidth: " + streamWidth);
+                console.log("streamHeight: " + streamHeight);
+
+                if (window.innerWidth > window.innerHeight * 16 / 9) {
+                    streamWidth = streamHeight / window.innerWidth * 100 * 16 / 9;
+                }
+                else {
+                    //do something
+                    streamHeight = window.innerWidth / 16 * 9 * streamWidth / 100;
+                }
+            }
+            else {
+                //I really doubt users are gonna have screens that are wider than a 32:9 ratio.
+                //If they do, fuck it, ill rewrite this and buy you guys a wow token or some shit
+                // ~ psych
+                var streamWidth = 50;
+                var streamHeight = window.innerWidth / 16 * 9 * streamWidth / 100;
+
+                //This requires a contingency for after things are added.
+                //Fuck.
+
+            }
+
+            //try catches are a suitable substitute for coding skills - psy
+            try {
+                document.getElementById("video1").width = streamWidth + "%";
+                document.getElementById("video1").height = streamHeight;
+            }
+            catch{ }
+            try {
+                document.getElementById("video2").width = streamWidth + "%";
+                document.getElementById("video2").height = streamHeight;
+            }
+
+            catch{ }
+
+            if (prod1.length > 18) {
+
+                document.body.insertAdjacentHTML('beforeEnd', '<iframe id="video1" class="video" width="' + streamWidth.toString() + '%" height="' + streamHeight.toString() + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen><\/iframe>');
+                var newID = "https://www.youtube.com/embed/live_stream?channel=";
+                var compVid = newID.concat(prod1);
+                video1.src = compVid;
+                i = 1;
+
+                if (i == 1 && prod2.length > 18) {
+
+                    document.body.insertAdjacentHTML('beforeEnd', '<iframe id="video2" width="' + streamWidth.toString() + '%" height="' + streamHeight.toString() + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen><\/iframe>');
+                    var newID = "https://www.youtube.com/embed/live_stream?channel=";
+                    var compVid = newID.concat(prod2);
+                    video2.src = compVid;
+                    i = 2;
+
+
+                    if (i == 2 && prod3.length > 18) {
+
+
+                        document.body.insertAdjacentHTML('beforeEnd', '<iframe id="video3" width="' + streamWidth.toString() + '%" height="' + streamHeight.toString() + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen><\/iframe>');
+                        var newID = "https://www.youtube.com/embed/live_stream?channel=";
+                        var compVid = newID.concat(prod3);
+                        video3.src = compVid;
+                        i = 3;
+
+
+
+                        if (i == 3 && prod4.length > 18) {
+
+
+                            document.body.insertAdjacentHTML('beforeEnd', '<iframe id="video4" width="' + streamWidth.toString() + '%" height="' + streamHeight.toString() + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen><\/iframe>');
+                            var newID = "https://www.youtube.com/embed/live_stream?channel=";
+                            var compVid = newID.concat(prod4);
+                            video4.src = compVid;
+                            hideUI();
+
+                        }
+
+                    }
+
+                }
+            }
+
         }
-        else {
-            //I really doubt users are gonna have screens that are wider than a 32:9 ratio.
-            //If they do, fuck it, ill rewrite this and buy you guys a wow token or some shit
-            // ~ psych
-            var streamWidth = 50;
-            var streamHeight = window.innerWidth / 16 * 9 * streamWidth / 100;
-
-            //This requires a contingency for after things are added.
-            //Fuck.
-
-        }
-
-        //try catches are a suitable substitute for coding skills - psy
-        try {
-            document.getElementById("video1").width = streamWidth + "%";
-            document.getElementById("video1").height = streamHeight;
-        }
-        catch{ }
-        try {
-            document.getElementById("video2").width = streamWidth + "%";
-            document.getElementById("video2").height = streamHeight;
-        }
-
-        catch{ }
-                
-	           if (prod1.length >18){           
-
-	           document.body.insertAdjacentHTML('beforeEnd', '<iframe id="video1" class="video" width="' + streamWidth.toString() + '%" height="' + streamHeight.toString() + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen><\/iframe>');
-	           var newID = "https://www.youtube.com/embed/live_stream?channel=";
-	           var compVid = newID.concat(prod1);
-	           video1.src = compVid;
-	           i = 1;
-	           
-	                   if (i == 1 && prod2.length > 18) {                  
-	                           
-	                    document.body.insertAdjacentHTML('beforeEnd', '<iframe id="video2" width="' + streamWidth.toString() + '%" height="' + streamHeight.toString() + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen><\/iframe>');
-	                   var newID = "https://www.youtube.com/embed/live_stream?channel=";
-	                   var compVid = newID.concat(prod2);
-	                   video2.src = compVid;
-	                   i = 2;                  
-	                       
-	                   
-	                       if (i == 2 && prod3.length > 18) {
-	                                           
-	                               
-	                       document.body.insertAdjacentHTML('beforeEnd', '<iframe id="video3" width="' + streamWidth.toString() + '%" height="' + streamHeight.toString() + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen><\/iframe>');
-	                       var newID = "https://www.youtube.com/embed/live_stream?channel=";
-	                       var compVid = newID.concat(prod3);
-	                       video3.src = compVid;
-	                       i = 3;
-	                       
-	                       
-	                       
-	                       if (i == 3 && prod4.length > 18) {
-	                                           
-	                               
-	                       document.body.insertAdjacentHTML('beforeEnd', '<iframe id="video4" width="' + streamWidth.toString() + '%" height="' + streamHeight.toString() + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen><\/iframe>');
-	                       var newID = "https://www.youtube.com/embed/live_stream?channel=";
-	                       var compVid = newID.concat(prod4);
-	                       video4.src = compVid;
-	                       hideUI();
-	                                                                                   
-	                   }
-	                                               
-	                   }
-	                   
-	               }
-	           }
-	                                   
-	       }
-
-	   function psychsThing() {
-	       var newStreamHeight = window.innerWidth / 32 * 9;     
-	   }
-	   
-	</script>
-	<div id="main">
-		<label for="channelID" onclick="CID.value='UCpnkOZVAhQDiy_eWcktdMFQ'; bruhTheFuckIsThis();">Channel ID:</label> <input id="CID" maxlength="24" name="CID" onfocus="this.value=''" type="text" value="Enter Channel ID Here"><br>
-		<br>
-		<button class="Submit" id="Submit" onclick="" type="button">Submit Channel ID</button> <button class="Hide" id="Hide" onclick="hideUI();" type="button">Hide UI</button> 
-		
-		<script> 
-			  
-		  document.getElementById("Submit").addEventListener("click", myClick);
-		              
-		      //$( function() {
-		          //$( "#main" ).draggable();
-		        //} );
-		         //Uncommenting this will make MAIN draggable
-		                      
-		     function bruhTheFuckIsThis() {
-		      document.body.style.cursor = 'url("uhoh.cur"), default';
-		      }
-		                    
-			 function resetUI(elem) {
-				history.replaceState({page: 3}, "title 3", "?")	
-				i = 0;
-				b = 1;
-				var frame1 = document.getElementById("video1");
-				frame1.parentNode.removeChild(frame1);
-				
-				var frame2 = document.getElementById("video2");
-				frame2.parentNode.removeChild(frame2);
-				
-				var frame3 = document.getElementById("video3");
-				frame3.parentNode.removeChild(frame3);
-				
-				var frame4 = document.getElementById("video4");
-				frame4.parentNode.removeChild(frame4);
-	
-						}
-
-			 function change1() {			 
-			   var txt;
-			  var newChannel = prompt("Please enter Video 1's new Channel ID:", "Channel ID");
-			  if (newChannel == null || newChannel == "") {
-				txt = "Idiot.";
-			  } else {
-				txt = newChannel;
-			  }
-			  			  
-			  var newID = "https://www.youtube.com/embed/live_stream?channel=";	  
-			  var compVid = newID.concat(txt);
-			  document.getElementById("video1").src= compVid;
-			 }
-			 
-			 function change2() {			 
-			   var txt;
-			  var newChannel = prompt("Please enter Video 2's new Channel ID:", "Channel ID");
-			  if (newChannel == null || newChannel == "") {
-				txt = "Idiot.";
-			  } else {
-				txt = newChannel;
-			  }
-			  			  
-			  var newID = "https://www.youtube.com/embed/live_stream?channel=";	  
-			  var compVid = newID.concat(txt);
-			  document.getElementById("video2").src= compVid;
-			 }
-			 
-			 function change3() {			 
-			   var txt;
-			  var newChannel = prompt("Please enter Video 3's new Channel ID:", "Channel ID");
-			  if (newChannel == null || newChannel == "") {
-				txt = "Idiot.";
-			  } else {
-				txt = newChannel;
-			  }
-			  			  
-			  var newID = "https://www.youtube.com/embed/live_stream?channel=";	  
-			  var compVid = newID.concat(txt);
-			  document.getElementById("video3").src= compVid;
-			 }
-			 
-			 function change4() {			 
-			   var txt;
-			  var newChannel = prompt("Please enter Video 4's new Channel ID:", "Channel ID");
-			  if (newChannel == null || newChannel == "") {
-				txt = "You really are a fucking idiot.";
-			  } else {
-				txt = newChannel;
-			  }
-			  			  
-			  var newID = "https://www.youtube.com/embed/live_stream?channel=";	  
-			  var compVid = newID.concat(txt);
-			  document.getElementById("video4").src= compVid;
-			 }
-			 
-		      function hideUI() {
-		      
-		          if (document.getElementById("video1")!=null) {
-		                document.getElementById('main').style.visibility="hidden";
-                      document.getElementById('Show').style.visibility = "visible";
-                      document.getElementById('change1').style.visibility = "hidden";
-                      document.getElementById('change2').style.visibility = "hidden";
-                      document.getElementById('change3').style.visibility = "hidden";
-                      document.getElementById('change4').style.visibility = "hidden";
-                      document.getElementById('storedIDs').style.visibility = "hidden";
-                      document.getElementById('reset').style.visibility = "hidden";
-		              } else {
-		                  alert("Might want to add something to watch before hiding the UI you silly monkey! Psych wuz here lmao slipped this by you");
-		              }               
-		      }
-		      
-		      function showUI() {
-		      
-		                document.getElementById('Show').style.visibility="hidden";
-                  document.getElementById('main').style.visibility = "visible";
-                  document.getElementById('change1').style.visibility = "visible";
-                  document.getElementById('change2').style.visibility = "visible";
-                  document.getElementById('change3').style.visibility = "visible";
-                  document.getElementById('change4').style.visibility = "visible";
-                  document.getElementById('storedIDs').style.visibility = "visible";
-                  document.getElementById('reset').style.visibility = "visible";
-		      }
-		          
-		      function myClick() {
-		          			
-		          if (document.getElementById("CID").value.length < 24) {
-		          alert("A Youtube channel ID is 24 characters long.");
-		          }
-		          
-		          else {
-                      i++;
-                      if (i > 2) {
-                          var streamWidth = 50;
-                          //var streamHeight = window.innerWidth / 16 * 9 * streamWidth / 100;
-                          var streamHeight = window.innerHeight / 2;
-                          console.log("let me explain!");
-                          console.log("streamWidth: " + streamWidth);
-                          console.log("streamHeight: " + streamHeight);
-
-                          if (window.innerWidth > window.innerHeight * 16 / 9) {
-                              streamWidth = streamHeight / window.innerWidth * 100 * 16 / 9;
-                          }
-                          else {
-                              //do something
-                              streamHeight = window.innerWidth / 16 * 9 * streamWidth / 100;
-                          }
-                      }
-                      else {
-                          //I really doubt users are gonna have screens that are wider than a 32:9 ratio.
-                          //If they do, fuck it, ill rewrite this and buy you guys a wow token or some shit
-                          // ~ psych
-                          var streamWidth = 50;
-                          var streamHeight = window.innerWidth / 16 * 9 * streamWidth / 100;
-
-                          //This requires a contingency for after things are added.
-                          //Fuck.
-                          
-                      }
-
-                      //try catches are a suitable substitute for coding skills - psy
-                      try {
-                          document.getElementById("video1").width = streamWidth+"%";
-                          document.getElementById("video1").height = streamHeight;
-                      }
-                      catch{ }
-                      try {
-                          document.getElementById("video2").width = streamWidth+"%";
-                          document.getElementById("video2").height = streamHeight;
-                      }
-                      catch{ }
-
-				
-		              console.log("and thats it.");
-				  
-				      
-				
-                      if (i == 1) {
-                          videoID1 = document.getElementById("CID").value;
-                          document.body.insertAdjacentHTML('beforeEnd', '<iframe id="video1" width="' + streamWidth.toString() + '%" height="' + streamHeight.toString() + '" frameborder="0" allow="accelerometer; allow="autoplay=1"; encrypted-media; gyroscope; picture-in-picture" allowfullscreen><\/iframe>');
-                          var newID = "https://www.youtube.com/embed/live_stream?channel=";
-                          var compVid = newID.concat(videoID1);
-                          video1.src = compVid;
-
-                          history.replaceState({ page: 3 }, "title 3", "?ID=" + videoID1);
-                          b = 2;
-                          const queryString = window.location.search;
-                          console.log(queryString);
-                          const urlParams = new URLSearchParams(queryString);
-                          const product = urlParams.get('ID')
-                      }
-
-                      else if (i == 2) {
-                          videoID2 = document.getElementById("CID").value;
-                          document.body.insertAdjacentHTML('beforeEnd', '<iframe id="video2" width="' + streamWidth.toString() + '%" height="' + streamHeight.toString() + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen><\/iframe>');
-                          var newID = "https://www.youtube.com/embed/live_stream?channel=";
-                          var compVid = newID.concat(videoID2);
-                          video2.src = compVid;
-
-                          if (b == 2) {
-                              history.replaceState({ page: 3 }, "title 3", "?ID=" + videoID1 + "?ID=" + videoID2)
-                              b = 3;
-                          } else {
-                              window.location.href = window.location.href + "?ID=" + videoID2
-                          }
-                          const queryString = window.location.search;
-                          console.log(queryString);
-                          const urlParams = new URLSearchParams(queryString);
-                          const product = urlParams.get('ID')
-
-                      }
-
-                      else if (i == 3) {
-                          videoID3 = document.getElementById("CID").value;
-                          document.body.insertAdjacentHTML('beforeEnd', '<iframe id="video3" width="' + streamWidth.toString() + '%" height="' + streamHeight.toString() + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen><\/iframe>');
-                          var newID = "https://www.youtube.com/embed/live_stream?channel=";
-                          var compVid = newID.concat(videoID3);
-                          video3.src = compVid;
 
 
-                          if (b == 3) {
-                              history.replaceState({ page: 3 }, "title 3", "?ID=" + videoID1 + "?ID=" + videoID2 + "?ID=" + videoID3)
-                              b = 4;
-                          } else {
-                              window.location.href = window.location.href + "?ID=" + videoID3
-                          }
+    </script>
+    <div id="main">
+        <label for="channelID" onclick="CID.value='UCpnkOZVAhQDiy_eWcktdMFQ';">Channel ID:</label> <input id="CID" maxlength="24" name="CID" onfocus="this.value=''" type="text" value="Enter Channel ID Here"><br>
+        <br>
+        <button class="Submit" id="Submit" onclick="" type="button">Submit Channel ID</button> <button class="Hide" id="Hide" onclick="hideUI();" type="button">Hide UI</button>
+
+        <script>
+
+            document.getElementById("Submit").addEventListener("click", myClick);
+
+            //$( function() {
+            //$( "#main" ).draggable();
+            //} );
+            //Uncommenting this will make MAIN draggable
+
+            function resetUI(elem) {
+                history.replaceState({ page: 3 }, "title 3", "?")
+                i = 0;
+                b = 1;
+                var frame1 = document.getElementById("video1");
+                frame1.parentNode.removeChild(frame1);
+
+                var frame2 = document.getElementById("video2");
+                frame2.parentNode.removeChild(frame2);
+
+                var frame3 = document.getElementById("video3");
+                frame3.parentNode.removeChild(frame3);
+
+                var frame4 = document.getElementById("video4");
+                frame4.parentNode.removeChild(frame4);
+
+            }
+
+            function change1() {
+                var txt;
+                var newChannel = prompt("Please enter Video 1's new Channel ID:", "Channel ID");
+                if (newChannel == null || newChannel == "") {
+                    txt = "Idiot.";
+                } else {
+                    txt = newChannel;
+                }
+
+                var newID = "https://www.youtube.com/embed/live_stream?channel=";
+                var compVid = newID.concat(txt);
+                document.getElementById("video1").src = compVid;
+            }
+
+            function change2() {
+                var txt;
+                var newChannel = prompt("Please enter Video 2's new Channel ID:", "Channel ID");
+                if (newChannel == null || newChannel == "") {
+                    txt = "Idiot.";
+                } else {
+                    txt = newChannel;
+                }
+
+                var newID = "https://www.youtube.com/embed/live_stream?channel=";
+                var compVid = newID.concat(txt);
+                document.getElementById("video2").src = compVid;
+            }
+
+            function change3() {
+                var txt;
+                var newChannel = prompt("Please enter Video 3's new Channel ID:", "Channel ID");
+                if (newChannel == null || newChannel == "") {
+                    txt = "Idiot.";
+                } else {
+                    txt = newChannel;
+                }
+
+                var newID = "https://www.youtube.com/embed/live_stream?channel=";
+                var compVid = newID.concat(txt);
+                document.getElementById("video3").src = compVid;
+            }
+
+            function change4() {
+                var txt;
+                var newChannel = prompt("Please enter Video 4's new Channel ID:", "Channel ID");
+                if (newChannel == null || newChannel == "") {
+                    txt = "You really are a fucking idiot.";
+                } else {
+                    txt = newChannel;
+                }
+
+                var newID = "https://www.youtube.com/embed/live_stream?channel=";
+                var compVid = newID.concat(txt);
+                document.getElementById("video4").src = compVid;
+            }
+
+            function hideUI() {
+
+                if (document.getElementById("video1") != null) {
+                    document.getElementById('main').style.visibility = "hidden";
+                    document.getElementById('Show').style.visibility = "visible";
+                    document.getElementById('change1').style.visibility = "hidden";
+                    document.getElementById('change2').style.visibility = "hidden";
+                    document.getElementById('change3').style.visibility = "hidden";
+                    document.getElementById('change4').style.visibility = "hidden";
+                    document.getElementById('storedIDs').style.visibility = "hidden";
+                    document.getElementById('reset').style.visibility = "hidden";
+                } else {
+                    alert("Might want to add something to watch before hiding the UI you silly monkey! Psych wuz here lmao slipped this by you");
+                }
+            }
+
+            function showUI() {
+
+                document.getElementById('Show').style.visibility = "hidden";
+                document.getElementById('main').style.visibility = "visible";
+                document.getElementById('change1').style.visibility = "visible";
+                document.getElementById('change2').style.visibility = "visible";
+                document.getElementById('change3').style.visibility = "visible";
+                document.getElementById('change4').style.visibility = "visible";
+                document.getElementById('storedIDs').style.visibility = "visible";
+                document.getElementById('reset').style.visibility = "visible";
+            }
+
+            function myClick() {
+
+                if (document.getElementById("CID").value.length < 24) {
+                    alert("A Youtube channel ID is 24 characters long.");
+                }
+
+                else {
+                    i++;
+                    if (i > 2) {
+                        var streamWidth = 50;
+                        //var streamHeight = window.innerWidth / 16 * 9 * streamWidth / 100;
+                        var streamHeight = window.innerHeight / 2;
+                        console.log("let me explain!");
+                        console.log("streamWidth: " + streamWidth);
+                        console.log("streamHeight: " + streamHeight);
+
+                        if (window.innerWidth > window.innerHeight * 16 / 9) {
+                            streamWidth = streamHeight / window.innerWidth * 100 * 16 / 9;
+                        }
+                        else {
+                            //do something
+                            streamHeight = window.innerWidth / 16 * 9 * streamWidth / 100;
+                        }
+                    }
+                    else {
+                        //I really doubt users are gonna have screens that are wider than a 32:9 ratio.
+                        //If they do, fuck it, ill rewrite this and buy you guys a wow token or some shit
+                        // ~ psych
+                        var streamWidth = 50;
+                        var streamHeight = window.innerWidth / 16 * 9 * streamWidth / 100;
+
+                        //This requires a contingency for after things are added.
+                        //Fuck.
+
+                    }
+
+                    //try catches are a suitable substitute for coding skills - psy
+                    try {
+                        document.getElementById("video1").width = streamWidth + "%";
+                        document.getElementById("video1").height = streamHeight;
+                    }
+                    catch{ }
+                    try {
+                        document.getElementById("video2").width = streamWidth + "%";
+                        document.getElementById("video2").height = streamHeight;
+                    }
+                    catch{ }
 
 
-                          const queryString = window.location.search;
-                          console.log(queryString);
-                          const urlParams = new URLSearchParams(queryString);
-                          const product = urlParams.get('ID')
-                          console.log(product);
 
-                      }
-                      else if (i == 4) {
-                          videoID4 = document.getElementById("CID").value;
-                          document.body.insertAdjacentHTML('beforeEnd', '<iframe id="video4" width="' + streamWidth.toString() + '%" height="' + streamHeight.toString() + '" frameborder="0" allow="accelerometer"; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen><\/iframe>');
-                          var newID = "https://www.youtube.com/embed/live_stream?channel=";
-                          var compVid = newID.concat(videoID4);
-                          video4.src = compVid;
+                    if (i == 1) {
+                        videoID1 = document.getElementById("CID").value;
+                        document.body.insertAdjacentHTML('beforeEnd', '<iframe id="video1" width="' + streamWidth.toString() + '%" height="' + streamHeight.toString() + '" frameborder="0" allow="accelerometer; allow="autoplay=1"; encrypted-media; gyroscope; picture-in-picture" allowfullscreen><\/iframe>');
+                        var newID = "https://www.youtube.com/embed/live_stream?channel=";
+                        var compVid = newID.concat(videoID1);
+                        video1.src = compVid;
 
-                          if (b == 4) {
-                              history.replaceState({ page: 3 }, "title 3", "?ID=" + videoID1 + "?ID=" + videoID2 + "?ID=" + videoID3 + "?ID=" + videoID4)
-                          } else {
-                              window.location.href = window.location.href + "?ID=" + videoID4
-                          }
+                        history.replaceState({ page: 3 }, "title 3", "?ID=" + videoID1);
+                        b = 2;
+                        const queryString = window.location.search;
+                        console.log(queryString);
+                        const urlParams = new URLSearchParams(queryString);
+                        const product = urlParams.get('ID')
+                    }
 
-                          const queryString = window.location.search;
-                          console.log(queryString);
-                          const urlParams = new URLSearchParams(queryString);
-                          const product = urlParams.get('ID')
-                          console.log(product);
-                          hideUI();
-                      }
-		      }
-		} 
-		  
-		</script>
-	</div>
+                    else if (i == 2) {
+                        videoID2 = document.getElementById("CID").value;
+                        document.body.insertAdjacentHTML('beforeEnd', '<iframe id="video2" width="' + streamWidth.toString() + '%" height="' + streamHeight.toString() + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen><\/iframe>');
+                        var newID = "https://www.youtube.com/embed/live_stream?channel=";
+                        var compVid = newID.concat(videoID2);
+                        video2.src = compVid;
+
+                        if (b == 2) {
+                            history.replaceState({ page: 3 }, "title 3", "?ID=" + videoID1 + "?ID=" + videoID2)
+                            b = 3;
+                        } else {
+                            window.location.href = window.location.href + "?ID=" + videoID2
+                        }
+                        const queryString = window.location.search;
+                        console.log(queryString);
+                        const urlParams = new URLSearchParams(queryString);
+                        const product = urlParams.get('ID')
+
+                    }
+
+                    else if (i == 3) {
+                        videoID3 = document.getElementById("CID").value;
+                        document.body.insertAdjacentHTML('beforeEnd', '<iframe id="video3" width="' + streamWidth.toString() + '%" height="' + streamHeight.toString() + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen><\/iframe>');
+                        var newID = "https://www.youtube.com/embed/live_stream?channel=";
+                        var compVid = newID.concat(videoID3);
+                        video3.src = compVid;
+
+
+                        if (b == 3) {
+                            history.replaceState({ page: 3 }, "title 3", "?ID=" + videoID1 + "?ID=" + videoID2 + "?ID=" + videoID3)
+                            b = 4;
+                        } else {
+                            window.location.href = window.location.href + "?ID=" + videoID3
+                        }
+
+
+                        const queryString = window.location.search;
+                        console.log(queryString);
+                        const urlParams = new URLSearchParams(queryString);
+                        const product = urlParams.get('ID')
+                        console.log(product);
+
+                    }
+                    else if (i == 4) {
+                        videoID4 = document.getElementById("CID").value;
+                        document.body.insertAdjacentHTML('beforeEnd', '<iframe id="video4" width="' + streamWidth.toString() + '%" height="' + streamHeight.toString() + '" frameborder="0" allow="accelerometer"; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen><\/iframe>');
+                        var newID = "https://www.youtube.com/embed/live_stream?channel=";
+                        var compVid = newID.concat(videoID4);
+                        video4.src = compVid;
+
+                        if (b == 4) {
+                            history.replaceState({ page: 3 }, "title 3", "?ID=" + videoID1 + "?ID=" + videoID2 + "?ID=" + videoID3 + "?ID=" + videoID4)
+                        } else {
+                            window.location.href = window.location.href + "?ID=" + videoID4
+                        }
+
+                        const queryString = window.location.search;
+                        console.log(queryString);
+                        const urlParams = new URLSearchParams(queryString);
+                        const product = urlParams.get('ID')
+                        console.log(product);
+                        hideUI();
+                    }
+                }
+            }
+
+        </script>
+    </div>
 </body>
 </html>
