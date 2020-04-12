@@ -11,15 +11,18 @@ var allowedKeys = {
 // the 'official' Konami Code sequence
 var konamiCode = ['up', 'up', 'down', 'down', 'left', 'right', 'left', 'right', 'b', 'a'];
 
+var unlockTheBoys = ['left', 'right', 'a', 'b', 'a'];
+
 // a variable to remember the 'position' the user has reached so far.
 var konamiCodePosition = 0;
+var theBoysPosition = 0;
 
 // add keydown event listener
 document.addEventListener('keydown', function(e) {
   // get the value of the key code from the key map
   var key = allowedKeys[e.keyCode];
   // get the value of the required key from the konami code
-  var requiredKey = konamiCode[konamiCodePosition];
+    var requiredKey = konamiCode[konamiCodePosition];
 
   // compare the key with the required key
   if (key == requiredKey) {
@@ -34,9 +37,26 @@ document.addEventListener('keydown', function(e) {
     }
   } else {
     konamiCodePosition = 0;
-  }
+    }
+
+    var requiredKeyTheBoys = unlockTheBoys[theBoysPosition];
+    if (key == requiredKeyTheBoys) {
+        theBoysPosition++;
+        if (theBoysPosition == unlockTheBoys.length) {
+            activateTheBoys();
+            theBoysPosition = 0;
+        }
+    } else {
+        theBoysPosition = 0;
+    }
 });
 
 function activateCheats() {
 	document.body.insertAdjacentHTML('beforeEnd', '<iframe id="video1" width="1920" height="980" src="https://www.youtube.com/embed/OdZrFtIGzfU?start=11&autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
 }
+
+/*
+function activateTheBoys() {
+    document.body.
+}
+*/

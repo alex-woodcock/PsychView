@@ -29,11 +29,12 @@
 
     <button class="Show stayOnTop" id="Show" onclick="showUI()" type="button">Show UI</button>
     <button class="reset" id="reset" onclick="resetUI()" type="button">Reset All</button>
+    <!--
     <button class="change1" id="change1" onclick="change1()" type="button">Edit Vid 1</button>
     <button class="change2" id="change2" onclick="change2()" type="button">Edit Vid 2</button>
     <button class="change3" id="change3" onclick="change3()" type="button">Edit Vid 3</button>
     <button class="change4" id="change4" onclick="change4()" type="button">Edit Vid 4</button>
-
+    -->
     <button class="iAmAlex" id="iAmAlex" onclick="iAm('alex')" type="button">I'm Alex</button>
     <button class="iAmZowta" id="iAmZowta" onclick="iAm('zowta')" type="button">I'm Zowta</button>
     <button class="iAmBob" id="iAmBob" onclick="iAm('bob')" type="button">I'm Bob</button>
@@ -351,7 +352,47 @@
                 document.getElementById('iAmPete').style.visibility = "visible";
                 document.getElementById('iAmDan').style.visibility = "visible";
             }
+            function updateSize() {
+                if (i > 2) {
+                    var streamWidth = 50;
+                    //var streamHeight = window.innerWidth / 16 * 9 * streamWidth / 100;
+                    var streamHeight = window.innerHeight / 2;
+                    console.log("let me explain!");
+                    console.log("streamWidth: " + streamWidth);
+                    console.log("streamHeight: " + streamHeight);
 
+                    if (window.innerWidth > window.innerHeight * 16 / 9) {
+                        streamWidth = streamHeight / window.innerWidth * 100 * 16 / 9;
+                    }
+                    else {
+                        //do something
+                        streamHeight = window.innerWidth / 16 * 9 * streamWidth / 100;
+                    }
+                }
+                else {
+                    //I really doubt users are gonna have screens that are wider than a 32:9 ratio.
+                    //If they do, fuck it, ill rewrite this and buy you guys a wow token or some shit
+                    // ~ psych
+                    var streamWidth = 50;
+                    var streamHeight = window.innerWidth / 16 * 9 * streamWidth / 100;
+
+                    //This requires a contingency for after things are added.
+                    //Fuck.
+
+                }
+
+                //try catches are a suitable substitute for coding skills - psy
+                try {
+                    document.getElementById("video1").width = streamWidth + "%";
+                    document.getElementById("video1").height = streamHeight;
+                }
+                catch{ }
+                try {
+                    document.getElementById("video2").width = streamWidth + "%";
+                    document.getElementById("video2").height = streamHeight;
+                }
+                catch{ }
+            }
             function myClick() {
                 if (document.getElementById("CID").value.length < 24) {
                     alert("A Youtube channel ID is 24 characters long.");
@@ -483,6 +524,69 @@
             }
 
             function iAm(person) {
+                if (document.getElementById('video1') == null) {
+                    document.body.insertAdjacentHTML('beforeEnd', '<iframe id="video1" width="50%" height="300" frameborder="0" allow="accelerometer; allow="autoplay=1"; encrypted-media; gyroscope; picture-in-picture" allowfullscreen><\/iframe>');
+                }
+                if (document.getElementById('video2') == null) {
+                    document.body.insertAdjacentHTML('beforeEnd', '<iframe id="video2" width="50%" height="300" frameborder="0" allow="accelerometer; allow="autoplay=1"; encrypted-media; gyroscope; picture-in-picture" allowfullscreen><\/iframe>');
+                }
+                if (document.getElementById('video3') == null) {
+                    document.body.insertAdjacentHTML('beforeEnd', '<iframe id="video3" width="50%" height="300" frameborder="0" allow="accelerometer; allow="autoplay=1"; encrypted-media; gyroscope; picture-in-picture" allowfullscreen><\/iframe>');
+                }
+                if (document.getElementById('video4') == null) {
+                    document.body.insertAdjacentHTML('beforeEnd', '<iframe id="video4" width="50%" height="300" frameborder="0" allow="accelerometer; allow="autoplay=1"; encrypted-media; gyroscope; picture-in-picture" allowfullscreen><\/iframe>');
+                }
+                i = 4;
+                if (i > 2) {
+                    var streamWidth = 50;
+                    //var streamHeight = window.innerWidth / 16 * 9 * streamWidth / 100;
+                    var streamHeight = window.innerHeight / 2;
+                    console.log("let me explain!");
+                    console.log("streamWidth: " + streamWidth);
+                    console.log("streamHeight: " + streamHeight);
+
+                    if (window.innerWidth > window.innerHeight * 16 / 9) {
+                        streamWidth = streamHeight / window.innerWidth * 100 * 16 / 9;
+                    }
+                    else {
+                        //do something
+                        streamHeight = window.innerWidth / 16 * 9 * streamWidth / 100;
+                    }
+                }
+                else {
+                    //I really doubt users are gonna have screens that are wider than a 32:9 ratio.
+                    //If they do, fuck it, ill rewrite this and buy you guys a wow token or some shit
+                    // ~ psych
+                    var streamWidth = 50;
+                    var streamHeight = window.innerWidth / 16 * 9 * streamWidth / 100;
+
+                    //This requires a contingency for after things are added.
+                    //Fuck.
+
+                }
+
+                //try catches are a suitable substitute for coding skills - psy
+                try {
+                    document.getElementById("video1").width = streamWidth + "%";
+                    document.getElementById("video1").height = streamHeight;
+                }
+                catch{ }
+                try {
+                    document.getElementById("video2").width = streamWidth + "%";
+                    document.getElementById("video2").height = streamHeight;
+                }
+                catch{ }
+                try {
+                    document.getElementById("video3").width = streamWidth + "%";
+                    document.getElementById("video3").height = streamHeight;
+                }
+                catch{ }
+                try {
+                    document.getElementById("video4").width = streamWidth + "%";
+                    document.getElementById("video4").height = streamHeight;
+                }
+                catch{}
+
                 if (person == "alex") {
                     change1to("UCpnkOZVAhQDiy_eWcktdMFQ");
                     change2to("UCzdyI1vpYMgtvinlz0eEkKA");
