@@ -5,13 +5,20 @@ var allowedKeys = {
   39: 'right',
   40: 'down',
   65: 'a',
-  66: 'b'
+    66: 'b',
+    71: 'g',
+    73: 'i',
+    78: 'n',
+    80: 'p',
+    82: 'r',
+    83: 's',
+  87: 'w'
 };
 
 // the 'official' Konami Code sequence
 var konamiCode = ['up', 'up', 'down', 'down', 'left', 'right', 'left', 'right', 'b', 'a'];
 
-var unlockTheBoys = ['left', 'right', 'a', 'b', 'a'];
+var unlockTheBoys = ['r', 'i', 'p', 'w', 'i', 'n', 'g', 's'];
 
 // a variable to remember the 'position' the user has reached so far.
 var konamiCodePosition = 0;
@@ -55,8 +62,7 @@ function activateCheats() {
 	document.body.insertAdjacentHTML('beforeEnd', '<iframe id="video1" width="1920" height="980" src="https://www.youtube.com/embed/OdZrFtIGzfU?start=11&autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
 }
 
-/*
+
 function activateTheBoys() {
-    document.body.
+    document.body.insertAdjacentHTML('beforeEnd', '<p id="TheBoysKey"></p>');
 }
-*/

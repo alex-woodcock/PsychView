@@ -349,12 +349,15 @@
                 document.getElementById('storedIDs').style.visibility = "visible";
                 document.getElementById('reset').style.visibility = "visible";
 
-                document.getElementById('iAmAlex').style.visibility = "visible";
-                document.getElementById('iAmZowta').style.visibility = "visible";
-                document.getElementById('iAmBob').style.visibility = "visible";
-                document.getElementById('iAmLee').style.visibility = "visible";
-                document.getElementById('iAmPete').style.visibility = "visible";
-                document.getElementById('iAmDan').style.visibility = "visible";
+                if (document.getElementById("TheBoysKey") != null) {
+                    document.getElementById('iAmAlex').style.visibility = "visible";
+                    document.getElementById('iAmZowta').style.visibility = "visible";
+                    document.getElementById('iAmBob').style.visibility = "visible";
+                    document.getElementById('iAmLee').style.visibility = "visible";
+                    document.getElementById('iAmPete').style.visibility = "visible";
+                    document.getElementById('iAmDan').style.visibility = "visible";
+                }
+                
             }
             function updateSize() {
                 if (i > 2) {
@@ -628,6 +631,8 @@
 
                 hideUI();
             }
+
+            
         </script>
     </div>
 </body>
