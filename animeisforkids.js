@@ -65,4 +65,6 @@ function activateCheats() {
 
 function activateTheBoys() {
     document.body.insertAdjacentHTML('beforeEnd', '<n id="TheBoysKey"></n>');
+    hideUI();
+    showUI();
 }
